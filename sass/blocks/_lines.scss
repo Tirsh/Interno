@@ -1,0 +1,32 @@
+.lines {
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: var(--content-width);
+    margin: 0 auto;
+    height: 100%;
+    border-left: 1px solid #E6E6E6;
+    border-right: 1px solid #E6E6E6;
+    z-index: -1;
+    &::before {
+        top:0;
+        left: 33.3%;
+        position: absolute;
+        content: '';
+        display: block;
+        height: 100%;
+        width: 1px;
+        background-color: #E6E6E6;
+    }
+    &::after {
+        top:0;
+        left: 66.6%;
+        position: absolute;
+        content: '';
+        display: block;
+        height: 100%;
+        width: 1px;
+        background-color: #E6E6E6;
+    }
+}
