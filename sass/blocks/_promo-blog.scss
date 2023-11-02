@@ -4,6 +4,7 @@
     padding-top: 178px;
     background: url(../../img/blog/main.jpg) center center / cover no-repeat;
     &__info {
+        padding: 41px;
         margin: 0 auto;
         height: 178px;
         width: 503px;
@@ -11,7 +12,6 @@
         background: #FFF;
     }
     &__title {
-        margin-top: 41px;
         text-align: center;
         font-size: 50px;
     }
