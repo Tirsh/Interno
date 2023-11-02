@@ -1,0 +1,102 @@
+.articles {
+    margin-top: 96px;
+    &__title {
+        text-align: center;
+        font-size: 50px;
+        line-height: 125%; /* 62.5px */
+        letter-spacing: 1px;
+    }
+    &__description {
+        display: block;
+        margin: 0 auto;
+        margin-top: 12px;
+        width: 811px;
+        color: $text-color;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 150%; /* 33px */
+        letter-spacing: 0.22px;
+    }
+    &__list {
+        margin-top: 52px;
+        display: grid;
+        grid-template-columns: repeat(3, 382px);
+        justify-content: space-between;
+    }
+    &__article {
+        position: relative;
+        width: 382px;
+        height: 521px;
+        padding: 21px;
+        border-radius: 62px;
+        border: 1px solid #E7E7E7;
+        box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+        &_active {
+            background-color: #F4F0EC;
+            .articles__article-btn {
+                background-color: #fff;
+            }
+        }
+        &-picture {
+            position: relative;
+            &_label {
+                position: absolute;
+                width: 124px;
+                height: 41px;
+                bottom: 20px;
+                left: 20px;
+                border-radius: 8px 8px 8px 0px;
+                background: #FFF;
+                color: #4D5053;
+                font-family: $text-color;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 150%; /* 24px */
+                letter-spacing: 0.16px;
+                text-transform: capitalize;
+                text-align: center;
+                line-height: 41px;
+                cursor: pointer;
+            }
+            img {
+                height: 289px;
+                width: 100%;
+                border-radius: 45px 45px 0px 0px;    
+            }
+        }
+        &-title {
+            margin-top: 21px;
+            width: 290px;
+            font-size: 25px;
+            line-height: 125%; /* 31.25px */
+            letter-spacing: 0.5px;
+        }
+        &-wrapper {
+            width: calc(100% - 42px);
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            bottom: 38px;
+        }
+        &-date {
+            color: $text-color;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 150%; /* 24px */
+            letter-spacing: 0.16px;
+            text-transform: capitalize;
+        }
+        &-btn {
+            cursor: pointer;
+            width: 52px;
+            height: 52px;
+            border-radius: 100%;
+            background-color: #F4F0EC;
+            text-align: center;
+            line-height: 52px;
+        }
+
+    }
+}

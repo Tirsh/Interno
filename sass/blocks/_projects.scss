@@ -1,0 +1,70 @@
+.projects {
+    margin-top: 100px;
+    &__title {
+        text-align: center;
+        font-size: 50px;
+        line-height: 125%; /* 62.5px */
+        letter-spacing: 1px;
+    }
+    &__description {
+        display: block;
+        margin: 0 auto;
+        width: 737px;
+        margin-top: 8px;
+        color: $text-color;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 150%; /* 33px */
+        letter-spacing: 0.22px;
+    }
+    &__list {
+        margin-top: 93px;
+        display: grid;
+        grid-template-columns: repeat(2, 550px);
+        column-gap: 100px;
+        row-gap: 56px;
+    }
+    &__card {
+        &-img {
+            height: 525px;
+            width: 100%;
+            object-fit: cover;
+            &_top-left {
+                border-radius: 0px 80px 0px 0px;
+            }
+            &_top-right {
+                border-radius: 80px 0px 0px 0px;
+            }
+            &_bottom-left {
+                border-radius: 0px 0px 80px 0px;
+            }
+            &_bottom-right {
+                border-radius: 0px 0px 0px 80px;
+            }
+            
+        }
+        &-data {
+            margin-top: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+        }
+        &-title {
+            font-size: 25px;
+            line-height: 125%; /* 31.25px */
+            letter-spacing: 0.5px;
+        }
+        &-type {
+            color: $text-color;
+            font-size: 22px;
+            font-style: normal;
+            line-height: 150%; /* 33px */
+            letter-spacing: 0.22px;
+        }
+        &-btn {
+            cursor: pointer;
+        }
+    }
+
+}

@@ -1,0 +1,48 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap-reboot.min.css");
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@400;600&display=swap');
+
+@import 'base/variables';
+
+:root {
+    --content-width: 1200px;
+}
+
+* {
+    font-family: Jost, serif;
+    margin: 0;
+    padding: 0;
+}
+body {
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: $text-color;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+.center {
+    padding-right: calc(50% - var(--content-width) / 2);
+    padding-left: calc(50% - var(--content-width) / 2);
+}
+
+.title {
+    font-family: 'DM Serif Display', serif;
+    color: $title-color;
+}
+
+@import 'blocks/lines.scss';
+@import 'blocks/header';
+@import 'blocks/promo';
+@import 'blocks/projects';
+@import 'blocks/results';
+@import 'blocks/articles';
+@import 'blocks/footer';
+
+
+@import 'media/media.scss';
