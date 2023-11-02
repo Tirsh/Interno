@@ -45,97 +45,22 @@
     </section>
     <section class="articles center">
         <h2 class="articles__title articles__title_blog">Articles & News</h2>
-        <div class="articles__list">
-            <article class="articles__article">
+        <div id="action" class="articles__list">
+            <article v-for="item in articlesList" :key="item.id"class="articles__article">
                 <div class="articles__article-picture">
-                    <img src="./img/articles/photo1.jpg" alt="photo1">
-                    <div class="articles__article-picture_label">Kitchan Design</div>
+                    <img :src="item.thumbnail" :alt="item.alt">
+                    <div class="articles__article-picture_label">{{ item.label }}</div>
                 </div>
-                <h3 class="articles__article-title title">Let’s Get Solution For Building Construction Work</h3>
+                <h3 class="articles__article-title title">{{ item.title }}</h3>
                 <div class="articles__article-wrapper">
-                    <div class="articles__article-date">26 December,2022</div>
+                    <div class="articles__article-date">{{ item.date }}</div>
                     <div class="articles__article-btn">
                         <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.77144 14.9527L7.71429 8.267L1.77144 1.58128" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>                        
                     </div>
                 </div>
-            </article>
-            <article class="articles__article articles__article_active">
-                <div class="articles__article-picture">
-                    <img src="./img/articles/photo2.jpg" alt="photo2">
-                    <div class="articles__article-picture_label">Living Design</div>
-                </div>
-                <h3 class="articles__article-title title">Low Cost Latest Invented Interior Designing Ideas</h3>
-                <div class="articles__article-wrapper">
-                    <div class="articles__article-date">26 December,2022</div>
-                    <div class="articles__article-btn">
-                        <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.77144 14.9527L7.71429 8.267L1.77144 1.58128" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>                        
-                    </div>
-                </div>
-            </article>
-            <article class="articles__article">
-                <div class="articles__article-picture">
-                    <img src="./img/articles/photo3.jpg" alt="photo3">
-                    <div class="articles__article-picture_label">Interior Design</div>
-                </div>
-                <h3 class="articles__article-title title">Best For Any Office & Business Interior Solution</h3>
-                <div class="articles__article-wrapper">
-                    <div class="articles__article-date">25 December,2022</div>
-                    <div class="articles__article-btn">
-                        <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.77144 14.9527L7.71429 8.267L1.77144 1.58128" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>                        
-                    </div>
-                </div>                    
-            </article>
-            <article class="articles__article">
-                <div class="articles__article-picture">
-                    <img src="./img/articles/photo4.png" alt="photo1">
-                    <div class="articles__article-picture_label">Kitchan Design</div>
-                </div>
-                <h3 class="articles__article-title title">Let’s Get Solution For Building Construction Work</h3>
-                <div class="articles__article-wrapper">
-                    <div class="articles__article-date">26 December,2022</div>
-                    <div class="articles__article-btn">
-                        <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.77144 14.9527L7.71429 8.267L1.77144 1.58128" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>                        
-                    </div>
-                </div>
-            </article>
-            <article class="articles__article">
-                <div class="articles__article-picture">
-                    <img src="./img/articles/photo5.png" alt="photo2">
-                    <div class="articles__article-picture_label">Living Design</div>
-                </div>
-                <h3 class="articles__article-title title">Low Cost Latest Invented Interior Designing Ideas</h3>
-                <div class="articles__article-wrapper">
-                    <div class="articles__article-date">26 December,2022</div>
-                    <div class="articles__article-btn">
-                        <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.77144 14.9527L7.71429 8.267L1.77144 1.58128" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>                        
-                    </div>
-                </div>
-            </article>
-            <article class="articles__article">
-                <div class="articles__article-picture">
-                    <img src="./img/articles/photo6.png" alt="photo3">
-                    <div class="articles__article-picture_label">Interior Design</div>
-                </div>
-                <h3 class="articles__article-title title">Best For Any Office & Business Interior Solution</h3>
-                <div class="articles__article-wrapper">
-                    <div class="articles__article-date">25 December,2022</div>
-                    <div class="articles__article-btn">
-                        <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.77144 14.9527L7.71429 8.267L1.77144 1.58128" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>                        
-                    </div>
-                </div>                    
-            </article>
+            </article>            
         </div>
         <ul class="articles__pagination">
             <li class="articles__pagination-item articles__pagination-item_active"><a href="#">01</a></li>
@@ -182,8 +107,60 @@
             </div>
         </div>
     </footer>
-
     <div class="lines"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: "#action",
+            data: {
+                articlesList: [
+                    {
+                        thumbnail: "./img/articles/photo1.jpg",
+                        alt: "photo1",
+                        label: "Kitchan Design",
+                        title: "Let’s Get Solution For Building Construction Work",
+                        date: "26 December,2022",
+                    },
+                    {
+                        thumbnail: "./img/articles/photo2.jpg",
+                        alt: "photo2",
+                        label: "Living Design",
+                        title: "Low Cost Latest Invented Interior Designing Ideas",
+                        date: "26 December,2022",
+                    },
+                    {
+                        thumbnail: "./img/articles/photo3.jpg",
+                        alt: "photo3",
+                        label: "Interior Design",
+                        title: "Best For Any Office & Business Interior Solution",
+                        date: "25 December,2022",
+                    },
+                    {
+                        thumbnail: "./img/articles/photo4.png",
+                        alt: "photo4",
+                        label: "Kitchan Design",
+                        title: "Let’s Get Solution For Building Construction Work",
+                        date: "26 December,2022",
+                    },
+                    {
+                        thumbnail: "./img/articles/photo5.png",
+                        alt: "photo5",
+                        label: "Living Design",
+                        title: "Low Cost Latest Invented Interior Designing Ideas",
+                        date: "26 December,2022",
+                    },
+                    {
+                        thumbnail: "./img/articles/photo6.png",
+                        alt: "photo6",
+                        label: "Interior Design",
+                        title: "Best For Any Office & Business Interior Solution",
+                        date: "25 December,2022",
+                    },
+                ]
+            }
+        })
+    </script>
     
 </body>
 </html>
