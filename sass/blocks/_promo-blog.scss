@@ -1,0 +1,29 @@
+.promo-blog {
+    margin-top: 45px;
+    max-height: 356px;
+    padding-top: 178px;
+    background: url(../../img/blog/main.jpg) center center / cover no-repeat;
+    &__info {
+        margin: 0 auto;
+        height: 178px;
+        width: 503px;
+        border-radius: 37px 37px 0px 0px;
+        background: #FFF;
+    }
+    &__title {
+        margin-top: 41px;
+        text-align: center;
+        font-size: 50px;
+    }
+    &__breadcrumbs {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        
+        :not(:last-child)::after {
+            content: '/';
+            padding-left: 5px;
+        }
+    }
+}
