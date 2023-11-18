@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog page</title>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+    <header class="header center">
+        <a href="#" class="header__logo">
+            <img src="icons/logo.svg" alt="logo">
+            <div class="header__title title">Interno</div>
+        </a>
+        <nav class="header__nav">
+            <ul class="header__menu">
+                <li class="header__link">Home</li>
+                <li class="header__link">Project</li>
+                <li class="header__link">Blog</li>
+            </ul>
+        </nav>
+    </header>
+    <section class="promo-blog">
+        <div class="promo-blog__info">
+            <h1 class="promo-blog__title title">Articles & News</h1>
+            <ul class="promo-blog__breadcrumbs">
+                <li class="promo-blog__breadcrumbs-item"><a href="#">Home</a></li >
+                <li class="promo-blog__breadcrumbs-item"><a href="#">Blog</a></li>
+            </ul>
+                
+                
+            </div>
+        </div>
+    </section>
+    <section class="latest-post center">
+        <h2 class="latest-post__title title">Latest Post</h2>
+        <div class="latest-post__post">
+            <img src="./img/blog/latest/photo.jpg" alt="latest" class="latest-post__img">
+            <div class="latest-post__content">
+                <h3 class="latest-post__title">Low Cost Latest Invented Interior Designing Ideas</h3>
+                <p class="latest-post__descr">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief. Lorem Ipsum is not simply random text. It has roots in a piece of classica.</p>
+                <div class="latest-post__date">26 December.2022</div>
+            </div>
+        </div>
+    </section>
+    <section class="articles center">
+        <h2 class="articles__title articles__title_blog">Articles & News</h2>
+        <div id="action" class="articles__list">
+            <article v-for="item in articlesList" :key="item.id"class="articles__article">
+                <div class="articles__article-picture">
+                    <img :src="item.thumbnail" :alt="item.alt">
+                    <div class="articles__article-picture_label">{{ item.label }}</div>
+                </div>
+                <h3 class="articles__article-title title">{{ item.title }}</h3>
+                <div class="articles__article-wrapper">
+                    <div class="articles__article-date">{{ item.date }}</div>
+                    <div class="articles__article-btn">
+                        <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.77144 14.9527L7.71429 8.267L1.77144 1.58128" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                        
+                    </div>
+                </div>
+            </article>            
+        </div>
+        <ul class="articles__pagination">
+            <li class="articles__pagination-item articles__pagination-item_active"><a href="#">01</a></li>
+            <li class="articles__pagination-item"><a href="#">02</a></li>
+            <li class="articles__pagination-item"><a href="#">03</a></li> 
+            <li class="articles__pagination-item"><a href="#">
+                <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.55714 15L7.5 8.31429L1.55714 1.62857" stroke="#292F36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                </a>
+            </li>             
+        </ul>
+    </section>
+    <footer class="footer center">
+        <div class="footer__wrapper">
+            <div class="footer__info">
+                <a href="#" class="footer__logo">
+                    <img src="icons/logo.svg" alt="logo">
+                    <div class="footer__logo-title title">Interno</div>
+                </a>
+                <div class="footer__tagline">It is a long established fact that a reader will be distracted lookings.</div>
+                <div class="footer__socials">
+                    <a href="#" id="twitter"><img src="./icons/twiter.svg" alt="twitter"></a>
+                    <a href="#" id="linkedin"><img src="./icons/linked.svg" alt="linked"></a>
+                </div>
+            </div>
+            <div class="footer__pages">
+                <h3 class="footer__title title">Pages</h3>
+                <nav class="footer__nav">
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="#">Home</a></li>
+                        <li class="footer__link"><a href="#">Project</a></li>
+                        <li class="footer__link"><a href="#">Blog</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__services"></div>
+            <div class="footer__contact">
+                <h3 class="footer__contact-title title">Contact</h3>
+                <div class="footer__contact-address">55 East Birchwood Ave. Brooklyn, New York 11201 </div>
+                <div class="footer__contact-email"><a href="mailto:contact@interno.com">contact@interno.com</a>
+                </div>
+                <div class="footer__contact-tel"><a href="tel:+1234567890">(123) 456 - 7890</a></div>
+            </div>
+        </div>
+    </footer>
+    <div class="lines"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: "#action",
+            data: {
+                articlesList: [
+                    {
+                        thumbnail: "./img/articles/photo1.jpg",
+                        alt: "photo1",
+                        label: "Kitchan Design",
+                        title: "Let’s Get Solution For Building Construction Work",
+                        date: "26 December,2022",
+                    },
+                    {
+                        thumbnail: "./img/articles/photo2.jpg",
+                        alt: "photo2",
+                        label: "Living Design",
+                        title: "Low Cost Latest Invented Interior Designing Ideas",
+                        date: "26 December,2022",
+                    },
+                    {
+                        thumbnail: "./img/articles/photo3.jpg",
+                        alt: "photo3",
+                        label: "Interior Design",
+                        title: "Best For Any Office & Business Interior Solution",
+                        date: "25 December,2022",
+                    },
+                    {
+                        thumbnail: "./img/articles/photo4.png",
+                        alt: "photo4",
+                        label: "Kitchan Design",
+                        title: "Let’s Get Solution For Building Construction Work",
+                        date: "26 December,2022",
+                    },
+                    {
+                        thumbnail: "./img/articles/photo5.png",
+                        alt: "photo5",
+                        label: "Living Design",
+                        title: "Low Cost Latest Invented Interior Designing Ideas",
+                        date: "26 December,2022",
+                    },
+                    {
+                        thumbnail: "./img/articles/photo6.png",
+                        alt: "photo6",
+                        label: "Interior Design",
+                        title: "Best For Any Office & Business Interior Solution",
+                        date: "25 December,2022",
+                    },
+                ]
+            }
+        })
+    </script>
+    
+</body>
+</html>

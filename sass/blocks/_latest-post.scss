@@ -1,0 +1,41 @@
+.latest-post {
+    margin-top: 200px;
+    min-height: 612px;
+    &__title {
+        font-size: 50px;
+    }
+    &__post { 
+        margin-top: 27px;       
+        padding: 22px;
+        height: 522px;
+        border-radius: 62px;
+        border: 1px solid #E7E7E7;
+        box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+        display: flex;
+        gap: 65px;
+    }
+    &__img {
+        width: 569px;
+        height: 478px;
+        border-radius: 50px;
+        object-fit: cover;
+    }
+    &__content {
+        position: relative;
+        margin: 51px 0;
+        font-size: 25px;
+    }
+    &__descr {
+        margin-top: 22px;
+        font-size: 22px;
+        line-height: 150%; /* 33px */
+        letter-spacing: 0.22px;
+    }
+    &__date {
+        position: absolute;
+        margin-top: 41px;
+        font-size: 16px;
+        left: 0;
+        bottom: 0;
+    }
+}
