@@ -3,8 +3,12 @@
     display: flex;
     justify-content: space-between;
     gap: 50px;
+    &__blogs-wrapper {
+        min-height: 300px;
+        min-width: 798px;
+    }
     &__blog {
-        max-width: 798px;
+        width: 798px;
     }
     &__title {
         font-size: 50px;
@@ -39,7 +43,7 @@
     }
     &__content {
         margin-top: 28px;
-        padding: 20px 0;
+        padding: 20px 0 40px;
     }
     &__text {
         margin: 20px 0 0;
@@ -123,6 +127,7 @@
             border-radius: 10px;
             border: none;
             background: #F4F0EC;
+            text-transform: capitalize;
             &_active {
                 background: #292F36;
                 color: #FFF;

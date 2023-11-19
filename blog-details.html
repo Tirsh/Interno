@@ -22,50 +22,29 @@
     </header>
     <section class="promo-blog promo-blog_details">
     </section>
-    <main class="blog-details center">
-        <article class="blog-details__blog" data-tag="kitchen">
-            <h2 class="blog-details__title title">Let’s Get Solution for Building Construction Work</h2>
-            <img src="./img/blog-details/blog/cb582b2f896ba899c60c1a02a38d0bed.png" alt="blog Title" class="blog-details__title-img">
-            <div class="blog-details__info">
-                <div class="blog-details__date">26 December,2022</div>
-                <ul class="blog-details__breadcrumbs">
-                    <li>Interior</li>
-                    <li>Home</li>
-                    <li>Decore</li>
-                </ul>
-            </div>
-            <div class="blog-details__content">
-                <p class="blog-details__text">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.</p>
-                <p class="blog-details__text">Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.</p>
-                <div class="blog-details__quote-block title">
-                    <div class="blog-details__quote">The details are not the details.<br/>They make the design.</div>                    
-                </div>
-                <h3 class="blog-details__subtitle title">
-                    Design sprints are great
-                </h3>
-                <p class="blog-details__text">
-                    Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.
-                </p>
-                <ul class="blog-details__points">
-                    <li class="blog-details__point">Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</li>
-                    <li class="blog-details__point">Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</li>
-                    <li class="blog-details__point">Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</li>
-                </ul>
-                <img src="./img/blog-details/blog/82b76fb3df9a10559c4dd2c81ce202c1.png" alt="blog Img" class="blog-details__img">
-                <p class="blog-details__text">
-                    Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.
-                </p>
-            </div>
-        </article>
+    <main class="blog-details center" id="app">
+        <div class="blog-details__blogs-wrapper">
+            <blog-component 
+                v-for="blog in listOfBlogs"
+                v-if="currentTag == blog.tag" 
+                :key="blog.id"
+                :tag=blog.tag 
+                :title=blog.title 
+                :titleimgurl=blog.titleImgUrl
+                :breadcrumbs=blog.breadCrumbs
+                :date=blog.date
+                :content="blog.content"
+            />
+        </div>
         <aside class="blog-details__controls">
             <h3 class="blog-details__controls-title title">Tags</h3>
             <div class="blog-details__controls-wrapper">
-                <button class="blog-details__controls-btn blog-details__controls-btn_active">Kitchen</button>
-                <button class="blog-details__controls-btn">Bedroom</button>
-                <button class="blog-details__controls-btn">Building</button>
-                <button class="blog-details__controls-btn">Architecture</button>
-                <button class="blog-details__controls-btn">Kitchen Planning</button>
-                <button class="blog-details__controls-btn">Bedroom</button>
+                <button 
+                    v-for="tag in listOfTags" :key="tag.id" 
+                    :class="['blog-details__controls-btn', tag===currentTag ? 'blog-details__controls-btn_active' : null]"
+                    @click="currentTag = tag">
+                        {{tag}}
+                </button>
             </div>
         </aside>
     </main>
@@ -103,6 +82,80 @@
         </div>
     </footer>
     <div class="lines"></div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./blog-comp.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                currentTag: 'kitchen',
+                listOfTags: ['kitchen', 'bedroom', 'building', 'architecture', 'kitchen planning', 'bathroom'],
+                listOfBlogs: [
+                    {
+                        tag: 'kitchen',
+                        title: 'Let’s Get Solution for Building Construction Work',
+                        titleImgUrl: './img/blog-details/blog/cb582b2f896ba899c60c1a02a38d0bed.png',
+                        date: '26 December,2022',
+                        breadCrumbs: ['Interior', 'Home', 'Decore'],
+                        content: `
+                                <p class="blog-details__text">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.</p>
+                                <p class="blog-details__text">Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.</p>
+                                <div class="blog-details__quote-block title">
+                                    <div class="blog-details__quote">The details are not the details.<br/>They make the design.</div>                    
+                                </div>
+                                <h3 class="blog-details__subtitle title">
+                                    Design sprints are great
+                                </h3>
+                                <p class="blog-details__text">
+                                    Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.
+                                </p>
+                                <ul class="blog-details__points">
+                                    <li class="blog-details__point">Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</li>
+                                    <li class="blog-details__point">Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</li>
+                                    <li class="blog-details__point">Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</li>
+                                </ul>
+                                <img src="./img/blog-details/blog/82b76fb3df9a10559c4dd2c81ce202c1.png" alt="blog Img" class="blog-details__img">
+                                <p class="blog-details__text">
+                                    Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.
+                                </p>
+                            `
+                    },
+                    {
+                        tag: 'bedroom',
+                        title: 'Smthg about bedroom',
+                        titleImgUrl: './img/blog-details/blog/chastity-cortijo-R-w5Q-4Mqm0-unsplash.jpg',
+                        date: '23 December,2022',
+                        breadCrumbs: ['Interior', 'Home', 'Decore'],
+                        content: `
+                                <p class="blog-details__text">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.</p>
+                                <p class="blog-details__text">Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.</p>
+                                <div class="blog-details__quote-block title">
+                                    <div class="blog-details__quote">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus</div>                    
+                                </div>
+                                <h3 class="blog-details__subtitle title">
+                                    Design sprints are great
+                                </h3>
+                                <p class="blog-details__text">
+                                    Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.
+                                </p>
+                                <ul class="blog-details__points">
+                                    <li class="blog-details__point">Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</li>
+                                    <li class="blog-details__point">Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</li>
+                                    <li class="blog-details__point">Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</li>
+                                    <li class="blog-details__point">Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</li>
+                                    <li class="blog-details__point">Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</li>
+                                </ul>
+                                <p class="blog-details__text">
+                                    Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.
+                                </p>
+                            `
+                    }
+
+                ]
+            },
+
+        });
+    </script>
     
 </body>
 </html>
